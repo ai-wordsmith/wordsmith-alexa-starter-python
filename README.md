@@ -21,6 +21,8 @@ Included with these templates is a `wordsmith_basic` library. Wordsmith has a fu
 ## Other Resources
 In some instances, it may be impossible or impractical to use a Lambda to respond to your Alexa Skills requests. The links below are intended to provide assistance with non-Lambda based response processing.
 
+[ngrok](https://ngrok.com/): Create a secure tunnel to `localhost`. You can point your Alexa Skill to your ngrok URL and have it run against a locally hosted service that you've built.
+
 [Flask](https://github.com/pallets/flask): Flask is a great general purpose library to get a server up and running quickly to respond to Alexa Skills requests.
 
 [Flask-Ask](https://github.com/johnwheeler/flask-ask): A fork of Flask developed specifically for handling Alexa Skills requests. If you do not need a fully custom solution, this is probably a great package to start with.
