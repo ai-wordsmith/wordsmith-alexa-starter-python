@@ -21,8 +21,8 @@ Included with these templates is a `wordsmith_basic` library. Wordsmith has a fu
 ## Other Resources
 In some instances, it may be impossible or impractical to use a Lambda to respond to your Alexa Skills requests. The links below are intended to provide assistance with non-Lambda based response processing.
 
-[*Flask*](https://github.com/pallets/flask): Flask is a great general purpose library to get a server up and running quickly to respond to Alexa Skills requests.
+[Flask](https://github.com/pallets/flask): Flask is a great general purpose library to get a server up and running quickly to respond to Alexa Skills requests.
 
-[*Flask-Ask*](https://github.com/johnwheeler/flask-ask): A fork of Flask developed specifically for handling Alexa Skills requests. If you do not need a fully custom solution, this is probably a great package to start with.
+[Flask-Ask](https://github.com/johnwheeler/flask-ask): A fork of Flask developed specifically for handling Alexa Skills requests. If you do not need a fully custom solution, this is probably a great package to start with.
 
-[*Wordsmith Full SDK*](https://github.com/ai-wordsmith/wordsmith-python-sdk): The full Python SDK for developing with the Wordsmith NLG Platform.
+[Wordsmith Full SDK](https://github.com/ai-wordsmith/wordsmith-python-sdk): The full Python SDK for developing with the Wordsmith NLG Platform.
