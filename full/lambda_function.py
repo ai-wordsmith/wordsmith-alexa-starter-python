@@ -109,8 +109,13 @@ def on_intent(intent_request, session):
             return build_response(session.get('attributes', {}), build_speechlet_response('Wordsmith Generated Response', narrative['data']['content'],
                 '<REPROMPT TEXT HERE>', True))
         else:
-            return build_response(session.get('attributes', {}), build_speechlet_response('Wordsmith Generation Error', 'Wordsmith reported the following error'.format(narrative['errors']['detail']),
-                '<REPROMPT TEXT HERE>', True))
+            if not isinstance(narrative['errors'], list) :
+                return build_response(session.get('attributes', {}), build_speechlet_response('Wordsmith Generation Error', 'Wordsmith reported the following error: {}'.format(narrative['errors']['detail']),
+                    '<REPROMPT TEXT HERE>', True))
+            else:
+                details = ', '.join([e['details'] for e in narrative['errors']])
+                return build_response(session.get('attributes', {}), build_speechlet_response('Wordsmith Generation Error', 'Wordsmith reported the following error: {}'.format(details),
+                    '<REPROMPT TEXT HERE>', True))
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":

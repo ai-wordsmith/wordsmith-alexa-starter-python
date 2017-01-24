@@ -62,7 +62,11 @@ def lambda_handler(event, context):
         if 'errors' not in narrative:
             return build_response(narrative['data']['content'], True)
         else:
-            return build_response('Wordsmith reported the following error'.format(narrative['errors']['detail']), True)
+            if not isinstance(narrative['errors'], list):
+                return build_response('Wordsmith reported the following error'.format(narrative['errors']['detail']), True)
+            else:
+                details = ', '.join([e['details'] for e in narrative['errors']])
+                return build_response('Wordsmith reported the following error'.format(details), True)
     else:
         raise ValueError("Invalid intent")
 
